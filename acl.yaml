@@ -9,5 +9,3 @@ default:
   allowed_domains: 
     - github.com
     - example.com
-    - localhost
-    - local.bakacore.com
