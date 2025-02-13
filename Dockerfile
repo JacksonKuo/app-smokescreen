@@ -1,12 +1,15 @@
 FROM golang:1.23.6-alpine3.21
 
 WORKDIR /app
-COPY acl.yaml config.yaml /app
+COPY acl.yaml config.yaml .
 
 RUN apk add --no-cache git
-RUN git clone https://github.com/stripe/smokescreen.git
+RUN git clone https://github.com/stripe/smokescreen.git 
+WORKDIR /app/smokescreen
 RUN go build
 
 EXPOSE 4750
 
-CMD ["smokescreen" "--config-file" "config.yaml" "--egress-acl-file" "acl.yaml"]
+#CMD ["./smokescreen", "--config-file", "/app/config.yaml", "--egress-acl-file", "/app/acl.yaml"]
+#CMD ["./smokescreen"]
+CMD ["./smokescreen", "--config-file", "/app/config.yaml", "--egress-acl-file", "/app/acl.yaml", "--unsafe-allow-private-ranges"]

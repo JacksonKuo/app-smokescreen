@@ -7,5 +7,7 @@ default:
   project: security
   action: enforce
   allowed_domains: 
-    - api.github.com
+    - github.com
     - example.com
+    - localhost
+    - local.bakacore.com
