@@ -10,6 +10,5 @@ RUN go build
 
 EXPOSE 4750
 
-#CMD ["./smokescreen", "--config-file", "/app/config.yaml", "--egress-acl-file", "/app/acl.yaml"]
+CMD ["./smokescreen", "--config-file", "/app/config.yaml", "--egress-acl-file", "/app/acl.yaml"]
 #CMD ["./smokescreen"]
-CMD ["./smokescreen", "--config-file", "/app/config.yaml", "--egress-acl-file", "/app/acl.yaml", "--unsafe-allow-private-ranges"]
