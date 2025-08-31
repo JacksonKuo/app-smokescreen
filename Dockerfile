@@ -1,4 +1,5 @@
-FROM golang:1.23.6-alpine3.21
+FROM cgr.dev/chainguard/go:latest-dev
+#FROM golang:1.23.6-alpine3.21
 
 WORKDIR /app
 COPY acl.yaml config.yaml .
