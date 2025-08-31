@@ -11,5 +11,6 @@ RUN go build
 
 EXPOSE 4750
 
-CMD ["./smokescreen", "--config-file", "/app/config.yaml", "--egress-acl-file", "/app/acl.yaml"]
+ENTRYPOINT ["./smokescreen"]
+CMD ["--config-file", "/app/config.yaml", "--egress-acl-file", "/app/acl.yaml"]
 #CMD ["./smokescreen"]
